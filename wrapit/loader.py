@@ -5,6 +5,7 @@ from doit import loader
 from doit.exceptions import InvalidDodoFile
 import six
 from doit.loader import generate_tasks, TASK_STRING
+from .parser import config_from_args
 
 class WrapitLoader(ModuleTaskLoader):
     """Loader class that does the loading of tasks"""
@@ -20,6 +21,8 @@ class WrapitLoader(ModuleTaskLoader):
             members = module
         task_list = self._load_tasks(members, cmd_list)
         doit_config = loader.load_doit_config(members)
+        if doit_config == {}:
+            doit_config = config_from_args(self.args)
         return task_list, doit_config
 
     def _load_tasks(self, members, cmd_list=()):
