@@ -81,6 +81,6 @@ class WrapitLoader(ModuleTaskLoader):
                 task_return = ref()
             generated_tasks = generate_tasks(name, task_return, ref.__doc__)
             for t in generated_tasks:
-                t.options = self.args
+                t.options = vars(self.args)
             task_list.extend(generated_tasks)
         return task_list
