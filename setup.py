@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name = "wrapit",
-    version = "0.0.1",
+    version = "0.1",
     author = "Rob Beagrie",
     author_email = "rob@beagrie.com",
     description = ("A package for making standalone analysis pipelines using doit and argparse"),
