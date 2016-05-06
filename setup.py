@@ -1,25 +1,39 @@
-import os
+# Always prefer setuptools over distutils
 from setuptools import setup
+# To use a consistent encoding
+from codecs import open
+from os import path
 
-# Utility function to read the README file.
-# Used for the long_description.  It's nice, because now 1) we have a top level
-# README file and 2) it's easier to type in the README file than to put a raw
-# string in below ...
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the README file
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
-    name = "wrapit",
-    version = "0.1",
-    author = "Rob Beagrie",
-    author_email = "rob@beagrie.com",
-    description = ("A package for making standalone analysis pipelines using doit and argparse"),
-    license = "MIT",
-    packages=['wrapit'],
-    long_description=read('README.md'),
+    name='wrapit',
+    version='0.2.0',
+    description='A task loader for doit that supports argparse console scripts',
+    long_description=long_description,
+    url='https://github.com/rbeagrie/wrapit',
+    author='Rob Beagrie',
+    author_email='rob@beagrie.com',
+    license='MIT',
+
     classifiers=[
-        "Development Status :: 3 - Alpha",
-        "Topic :: Utilities",
-        "License :: OSI Approved :: MIT License",
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Build Tools',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
     ],
+
+    keywords='doit development console_scripts build_tools',
+
+    packages=['wrapit'],
+
+    install_requires=['doit'],
+
 )
