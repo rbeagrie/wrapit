@@ -15,7 +15,7 @@ doit_options = [
         "name": "backend", 
         "kwargs": {
             "default": "dbm", 
-            "choices": Run().get_backends().keys(),
+            "choices": list(Run().get_backends().keys()),
             "help": "Select dependency file backend. [default: %(default)s]"
         }
     }, 
@@ -57,7 +57,7 @@ doit_options = [
         "name": "verbosity", 
         "kwargs": {
             "default": 1,
-            "choices": range(3),
+            "choices": list(range(3)),
             "type": int,
             "help": "0 capture (do not print) stdout/stderr from task.\n1 capture stdout only.\n2 do not capture anything (print everything immediately)."
         }
@@ -67,7 +67,7 @@ doit_options = [
         "name": "reporter", 
         "kwargs": {
             "default": "console", 
-            "choices": Run().get_reporters().keys(),
+            "choices": list(Run().get_reporters().keys()),
             "help": "Choose output reporter."
         }
     }, 

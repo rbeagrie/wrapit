@@ -12,7 +12,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='wrapit',
-    version='0.2.0',
+    version='0.2.1',
     description='A task loader for doit that supports argparse console scripts',
     long_description=long_description,
     url='https://github.com/rbeagrie/wrapit',
