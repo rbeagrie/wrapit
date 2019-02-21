@@ -12,7 +12,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='wrapit',
-    version='0.2.1',
+    version='0.2.2',
     description='A task loader for doit that supports argparse console scripts',
     long_description=long_description,
     url='https://github.com/rbeagrie/wrapit',
@@ -34,6 +34,9 @@ setup(
 
     packages=['wrapit'],
 
-    install_requires=['doit'],
+    extras_require={
+      ':python_version<"3.0"': ['doit==0.29.0'],
+      ':python_version>="3.0"': ['doit==0.30.0'],
+    },
 
 )

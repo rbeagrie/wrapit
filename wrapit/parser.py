@@ -121,6 +121,14 @@ doit_options = [
             "action": 'store_true',
             "help": "Uses the default regex '.*' for every delayed task loader for which no regex was explicitly defined"
         }
+    }, 
+    {
+        "option_string": "--doit-reset-dep", 
+        "name": "reset_dep", 
+        "kwargs": {
+            "action": 'store_true',
+            "help": "Rebuild the dependencies database instead of running any tasks"
+        }
     }
 ]
 
